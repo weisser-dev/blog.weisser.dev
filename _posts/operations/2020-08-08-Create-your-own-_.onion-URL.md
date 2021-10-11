@@ -1,5 +1,5 @@
 ﻿---
-title: "Post: Chat"
+title: "Create a custom *.onion URL with Shallot"
 categories:
   - Post Formats
 tags:
