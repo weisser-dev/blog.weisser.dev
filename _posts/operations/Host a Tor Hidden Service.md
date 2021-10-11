@@ -1,4 +1,12 @@
-﻿## Create and Publish a new Website on Tor
+﻿---
+title: "Create a custom *.onion URL with Shallot"
+categories:
+  - Post Formats
+tags:
+  - chat
+  - Post Formats
+---
+## Create and Publish a new Website on Tor
 
 ### Prerequisites
 Whether you want to create a new website or host an existing one on the Tor network, you will need the following packages in both cases:

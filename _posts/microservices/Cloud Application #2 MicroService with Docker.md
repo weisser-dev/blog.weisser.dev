@@ -1,4 +1,12 @@
-﻿## Prerequisites  
+﻿---
+title: "Create a custom *.onion URL with Shallot"
+categories:
+  - Post Formats
+tags:
+  - chat
+  - Post Formats
+---
+## Prerequisites  
 
 - A working MicroService (Tutorial: [Java MicroService]([https://whit-e.com/articles/building-java-rest-api](https://whit-e.com/articles/building-java-rest-api)) or [Node.JS MicroService]([https://whit-e.com/articles/building-nodejs-rest-api](https://whit-e.com/articles/building-nodejs-rest-api)))
 - Docker installed on your server (example on Ubuntu: following Steps 1 and 2 of [How To Install and Use Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04))

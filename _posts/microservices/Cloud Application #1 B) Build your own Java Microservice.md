@@ -1,4 +1,11 @@
-﻿
+﻿---
+title: "Create a custom *.onion URL with Shallot"
+categories:
+  - Post Formats
+tags:
+  - chat
+  - Post Formats
+---
 ## Prerequisites
 - installed java 8
 - installed gradle

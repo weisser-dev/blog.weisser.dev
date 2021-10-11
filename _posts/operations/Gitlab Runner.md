@@ -1,4 +1,11 @@
-﻿
+﻿---
+title: "Create a custom *.onion URL with Shallot"
+categories:
+  - Post Formats
+tags:
+  - chat
+  - Post Formats
+---
 #Running like a Pipeline
 -docker images kopieren in cache und neu laden - damit umgeht man traffic probleme bei zu kleinen nodes / bandbreiten beschränkungen
 - keine highmem maschinen nehmen

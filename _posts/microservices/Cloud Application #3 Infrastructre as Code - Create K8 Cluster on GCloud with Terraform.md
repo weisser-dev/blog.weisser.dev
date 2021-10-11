@@ -1,4 +1,12 @@
-﻿You're thinking about your last game of Buzzword Bingo when you read the headline? I trust you immediately!
+﻿---
+title: "Create a custom *.onion URL with Shallot"
+categories:
+  - Post Formats
+tags:
+  - chat
+  - Post Formats
+---
+You're thinking about your last game of Buzzword Bingo when you read the headline? I trust you immediately!
 But here I explain to you - what exactly is "Infrastructure as Code" using the examples of Terraform, Kubernetes and the Gcloud.
 
 ## WHAT is ``infrastructure as code``

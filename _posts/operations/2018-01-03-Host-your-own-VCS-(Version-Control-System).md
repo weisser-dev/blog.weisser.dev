@@ -1,4 +1,11 @@
-﻿
+﻿---
+title: "Host your own VCS Server"
+categories:
+  - Operations
+tags:
+  - Operations
+  - VCS
+---
 ### Why should I host my own Version Control System?
 
 In times of cloud storage, Github, Bitbucket & Co. nobody will worry about hosting their sources.

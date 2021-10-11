@@ -1,4 +1,12 @@
-﻿
+﻿---
+title: "Very simple & fast Node.js Deployment"
+categories:
+  - Operations
+tags:
+  - Operations
+  - Node.JS
+  - PM2
+---
 At the moment I'm in the process of rebuilding everything here. My private laptop, the blog etc..
 
 Since it always annoyed me that I only updated my blog via FTP (i.e. developed JS files with VS code locally and then shared them via ftp) I thought it would be cool if I quickly build a process to save that ftp way.
