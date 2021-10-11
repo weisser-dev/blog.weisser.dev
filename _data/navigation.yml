@@ -6,8 +6,8 @@ main:
      url: https://github.com/weisser-dev
    - title: "My Apps"
      children:
-        - title: "Chrome Coverage Converter"
-        - url: "https://weisser-dev.github.io/devtools-coverage-extractor/"
+      - title: "Chrome Coverage Converter"
+        url: "https://weisser-dev.github.io/devtools-coverage-extractor/"
   # - title: "Sample Posts"
   #   url: /year-archive/
   #- title: "Sample Collections"
