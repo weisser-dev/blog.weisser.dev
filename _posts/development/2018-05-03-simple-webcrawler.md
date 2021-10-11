@@ -10,7 +10,7 @@ tags:
 ### Prerequisites
 To complete this tutorial, you'll need a local development environment for Python 3. You can follow this Tutorial: "[How To Install and Set Up a Local Programming Environment for Python 3](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-python-3)" to configure everything you need.
 
-[https://github.com/whit-e/2048](https://github.com/whit-e/2048)
+[https://github.com/weisser-dev/2048](https://github.com/weisser-dev/2048)
 
 ### Step 1 - Install Dependencies
 Before we create a new crawler, we must first install the required dependencies. These are the following:
@@ -172,8 +172,8 @@ The whole thing could look like this:
             }
 
 ### Code Example
-On my [Github](https://github.com/whit-e/testcrawler) you will find the example project below - without the ElasticSearch connection.
+On my [Github](https://github.com/weisser-dev/testcrawler) you will find the example project below - without the ElasticSearch connection.
 
 Here is a small project that crawls a certain number of Wikipedia pages into an elastic index. In addition, there is a web page for querying the elastic index.
-Project: [https://github.com/whit-e/wiki-crawler](https://github.com/whit-e/wiki-crawler)
+Project: [https://github.com/weisser-dev/wiki-crawler](https://github.com/weisser-dev/wiki-crawler)
 ElasticDemoPage: [http://whit-e.com/wiki-crawler-example](http://whit-e.com/wiki-crawler-example) - not 100% responsive.

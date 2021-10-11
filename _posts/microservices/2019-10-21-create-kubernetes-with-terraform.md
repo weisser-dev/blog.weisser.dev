@@ -153,7 +153,7 @@ terraform apply
 **Info**: *The apply and build of our new infrastructure can take a few minutes*
 
 The sources for our Terraform example are available here:
-[https://github.com/whit-e/terraform-cloud-application](https://github.com/whit-e/terraform-cloud-application)
+[https://github.com/weisser-dev/terraform-cloud-application](https://github.com/weisser-dev/terraform-cloud-application)
 
 ## Connect to the Cluster
 ### Install required Tools:
@@ -236,7 +236,7 @@ We have now successfully created a cluster with Terraform and then pushed a cont
 
 __________
 *The sources for our Terraform example are available here:*
-[https://github.com/whit-e/terraform-cloud-application](https://github.com/whit-e/terraform-cloud-application)
+[https://github.com/weisser-dev/terraform-cloud-application](https://github.com/weisser-dev/terraform-cloud-application)
 
 If you have any questions, please feel free to write a comment. Even if something doesn't work anymore (software becomes more up-to-date and some methods outdated) just write!
 

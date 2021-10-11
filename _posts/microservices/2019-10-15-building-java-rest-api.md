@@ -273,7 +273,7 @@ So far we have a versionable API / MicroService which only gives us "static" ans
 To process "real" data we need a database and have to connect our service to it.
 For this purpose we first create a MySQL e.g. on remotemysql.com, or locally on our PC.
 So that our database contains some data you can simply import this sql: 
-[Dump20191012.sql](So%20that%20our%20database%20contains%20some%20data%20you%20can%20simply%20import%20this%20sql:%20https://github.com/whit-e/microservice_blueprint_java/blob/master/resources/Dump20191012.sql)
+[Dump20191012.sql](So%20that%20our%20database%20contains%20some%20data%20you%20can%20simply%20import%20this%20sql:%20https://github.com/weisser-dev/microservice_blueprint_java/blob/master/resources/Dump20191012.sql)
 Now we already have a pool of data.
 Only the connection to the database is missing.
 For this I like to create a helper class called ``DBUtils``:
@@ -497,4 +497,4 @@ We now have a running versioned microservice that queries a database and sends t
 
 ***Info**/ **best practice**: Why should I always check the database for each request? Just create a **cache**. When the server starts or adds data to the database, it is filled with data. Advantage: significantly less load on the system and your database*
 
-#### Project: [GitHub: microservice_blueprint_java](https://github.com/whit-e/microservice_blueprint_java)
+#### Project: [GitHub: microservice_blueprint_java](https://github.com/weisser-dev/microservice_blueprint_java)

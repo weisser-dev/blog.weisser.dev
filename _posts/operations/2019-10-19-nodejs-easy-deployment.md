@@ -20,7 +20,7 @@ So I thought about what is the fastest & easiest way to get the decision to buil
 ## Fast Deployment
 First we go to our /var/www/ Folder at our SERVER and Checkout the Service: 
 ```
-git clone https://github.com/whit-e/microservice_blueprint_nodejs
+git clone https://github.com/weisser-dev/microservice_blueprint_nodejs
 ```
 Info: *If Git asks you now for your credentials, we still have to configure that this will not happen in the future. 
 

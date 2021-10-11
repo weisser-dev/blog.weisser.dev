@@ -240,4 +240,4 @@ module.exports = app;
 
 ***Info**/ **best practice**: Why should I always check the database for each request? Just create a **cache**. When the server starts or adds data to the database, it is filled with data. Advantage: significantly less load on the system and your database*
 
-#### Project: [GitHub: microservice_blueprint_nodejs](https://github.com/whit-e/microservice_blueprint_nodejs)
+#### Project: [GitHub: microservice_blueprint_nodejs](https://github.com/weisser-dev/microservice_blueprint_nodejs)

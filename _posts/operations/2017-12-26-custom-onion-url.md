@@ -85,5 +85,5 @@ Here a short example:
 I have now generated about 5-10 domains which all started with whi. Domains with the beginning of "whit3" and so on could have been there. When the domain finally started with "white" I stopped generating new ones and displayed the appropriate Private_Key.
 As a result, I was able to notice a significant reduction in the time taken to generate new domains.
 
-My small script for address generation can be found [here](https://github.com/whit-e/OnionAddressGenerator).
+My small script for address generation can be found [here](https://github.com/weisser-dev/OnionAddressGenerator).
 It must be in the same folder as Shallot and you should create a tmp folder there.
