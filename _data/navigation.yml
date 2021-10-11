@@ -4,13 +4,10 @@ main:
       url: https://weisser.dev
     - title: "GitHub"
       url: https://github.com/weisser-dev
-    - title: "My Apps"
+    - title: "Parent Link 1"
+      url: /parent-1-page-url/
       children:
-        title: "Chrome Coverage Converter"
-        url: "https://weisser-dev.github.io/devtools-coverage-extractor/"
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  #- title: "Sample Collections"
-  #     url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+        - title: "Child Link 1"
+          url: /child-1-page-url/
+        - title: "Child Link 2"
+          url: /child-2-page-url/
