@@ -37,12 +37,12 @@ body {
 
 .page {
   @include breakpoint($large) {
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
 
   @include breakpoint($x-large) {
-    width: 80%;
+    width: 100%;
   }
 
   .page__inner-wrap {
