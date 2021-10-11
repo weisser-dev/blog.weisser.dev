@@ -4,6 +4,9 @@ main:
      url: https://weisser.dev
    - title: "GitHub"
      url: https://github.com/weisser-dev
+     child:
+        - title: "Test"
+        - url: "#"
   # - title: "Sample Posts"
   #   url: /year-archive/
   #- title: "Sample Collections"
