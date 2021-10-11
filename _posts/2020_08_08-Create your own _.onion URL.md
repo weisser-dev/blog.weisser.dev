@@ -1,18 +1,23 @@
-﻿## Create a custom *.onion URL with Shallot
+﻿---
+layout: post
+title:  "Create a custom *.onion URL with Shallot"
+---
+
+# Create a custom *.onion URL with Shallot
 
 It is very simple to create your own domain for the Tor network.
 -> If you don't know how to install the Tor service and host a site there, read the following article: [tor-hidden-service-nginx](/tor-hidden-service-nginx)
 
-### Step 1 - Download Shallot
+## Step 1 - Download Shallot
 Change to your opt folder
 ``` cd /opt ``` 
 Now there are two ways to get Shallot. 
-#### Via Git
+### Via Git
 ``` git clone https://github.com/katmagic/Shallot.git ```
-#### Via Browser
+### Via Browser
 ``` curl https://github.com/katmagic/Shallot/archive/master.zip ```
 
-### Step 2 - Install Shallot
+## Step 2 - Install Shallot
 Installing Shallot is also very easy, just type the following commands in your terminal: 
 ``` 
 cd /opt/Shallot/
@@ -20,7 +25,7 @@ cd /opt/Shallot/
 ./shallot 
 ```
 
-### Step 3 - Generate your *.onion URL
+## Step 3 - Generate your *.onion URL
 To generate a *. onion url now, we only have to execute shallot and give our desired url as parameter. You should always keep in mind the times for the url generation, these are linked on the [github](https://github.com/katmagic/Shallot) page of the project.
 
 ```
@@ -48,7 +53,7 @@ tFKxsc37ty5/E/klFaWNAkEA7sg3tJz5qJ9fN/JXneSPqokqiIkBxNcHzmFccPAY
 After a matching url has been found, we only have to replace the existing private_key in our Tor directory (/var/lib/tor/example_page) with the new one.
 And finally we restart Tor and can now reach our site via the new domain.
 
-### Optional 
+## Optional 
 
 Because the generation of larger addresses takes more time. I have written a small shell script which allows us to save all generated urls.
 In other words, if I want a URL that starts with "whitecom", I can give one ^white as a parameter - so all created urls start with white. And as soon as I have one that starts with "whitecom" I stop creating urls. This gives me the possibility to generate several suitable domains and to choose the best one at the end, because all private_keys are stored in the /tmp folder.
