@@ -1,4 +1,13 @@
-﻿### Prerequisites
+﻿---
+title: "Build a simple WebCrawler (Python)"
+categories:
+  - development
+tags:
+  - development
+  - python
+---
+
+### Prerequisites
 To complete this tutorial, you'll need a local development environment for Python 3. You can follow this Tutorial: "[How To Install and Set Up a Local Programming Environment for Python 3](https://www.digitalocean.com/community/tutorial_series/how-to-install-and-set-up-a-local-programming-environment-for-python-3)" to configure everything you need.
 
 [https://github.com/whit-e/2048](https://github.com/whit-e/2048)

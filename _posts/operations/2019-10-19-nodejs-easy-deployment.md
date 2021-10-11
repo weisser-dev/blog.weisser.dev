@@ -1,11 +1,11 @@
 ﻿---
 title: "Very simple & fast Node.js Deployment"
 categories:
-  - Operations
+  - operations
 tags:
-  - Operations
-  - Node.JS
-  - PM2
+  - operations
+  - node.js
+  - pm2
 ---
 At the moment I'm in the process of rebuilding everything here. My private laptop, the blog etc..
 

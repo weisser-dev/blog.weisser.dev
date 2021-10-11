@@ -1,10 +1,10 @@
 ﻿---
 title: "HOW TO: Fedora looks & feels like Mac OS X Mojave"
 categories:
-  - Linux
+  - linux
 tags:
-  - Linux
-  - Fedora
+  - linux
+  - fedora
 ---
 ## Introduction
 In this tutorial I will show you how to get some features and the layout of OS X on your Fedora.

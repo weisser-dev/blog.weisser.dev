@@ -1,10 +1,10 @@
 ﻿---
 title: "Host your own VCS Server"
 categories:
-  - Operations
+  - operations
 tags:
-  - Operations
-  - VCS
+  - operations
+  - vcs
 ---
 ### Why should I host my own Version Control System?
 

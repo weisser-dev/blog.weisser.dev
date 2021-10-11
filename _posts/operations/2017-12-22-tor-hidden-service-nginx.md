@@ -1,10 +1,10 @@
 ﻿---
-title: "Create a custom *.onion URL with Shallot"
+title: "Host a Tor Hidden Service (Nginx)"
 categories:
-  - Post Formats
+  - operations
 tags:
-  - chat
-  - Post Formats
+  - operations
+  - nginx
 ---
 ## Create and Publish a new Website on Tor
 

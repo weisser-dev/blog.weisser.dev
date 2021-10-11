@@ -1,10 +1,12 @@
 ﻿---
-title: "Create a custom *.onion URL with Shallot"
+title: "Cloud Application #1 B) Build your own Java Microservice"
 categories:
-  - Post Formats
+  - microservices
 tags:
-  - chat
-  - Post Formats
+  - dev
+  - java
+  - cloud application
+  - cloud
 ---
 ## Prerequisites
 - installed java 8

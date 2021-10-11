@@ -1,10 +1,13 @@
 ﻿---
-title: "Create a custom *.onion URL with Shallot"
+title: "Cloud Application #2 Dockerize our Services"
 categories:
-  - Post Formats
+  - microservices
 tags:
-  - chat
-  - Post Formats
+  - development
+  - docker
+  - container
+  - cloud
+  - microservices
 ---
 ## Prerequisites  
 

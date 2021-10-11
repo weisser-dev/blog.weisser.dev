@@ -1,11 +1,12 @@
 ﻿---
 title: "Cloud Application #1 A) Build your own Node.js Microservice"
 categories:
-  - Microservices
+  - microservices
 tags:
-  - Dev
-  - Node.JS
-  - Cloud Application
+  - dev
+  - node.js
+  - cloud application
+  - cloud
 ---
 ## Prerequisites
 - installed Node.js and Npm 

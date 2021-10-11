@@ -1,10 +1,16 @@
 ﻿---
-title: "Create a custom *.onion URL with Shallot"
+title: "Cloud Application #3 Infrastructre as Code - Create K8 Cluster on GCloud with Terraform & Deploy Container"
 categories:
-  - Post Formats
+  - operations
+  - microservices
+  - cloud
 tags:
-  - chat
-  - Post Formats
+  - operations
+  - microservices
+  - cloud
+  - terraform
+  - docker
+  - kubernetes
 ---
 You're thinking about your last game of Buzzword Bingo when you read the headline? I trust you immediately!
 But here I explain to you - what exactly is "Infrastructure as Code" using the examples of Terraform, Kubernetes and the Gcloud.

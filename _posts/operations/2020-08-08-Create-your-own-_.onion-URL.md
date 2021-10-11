@@ -1,14 +1,11 @@
 ﻿---
 title: "Create a custom *.onion URL with Shallot"
 categories:
-  - Post Formats
+  - operations
 tags:
-  - chat
-  - Post Formats
+  - operations
+  - shell
 ---
-
-
-# Create a custom *.onion URL with Shallot
 
 It is very simple to create your own domain for the Tor network.
 -> If you don't know how to install the Tor service and host a site there, read the following article: [tor-hidden-service-nginx](/tor-hidden-service-nginx)

@@ -1,4 +1,13 @@
-﻿## 🤖 Build your own  Messenger-Bot
+﻿---
+title: "Build a Facebook Messenger Bot (Node.js)"
+categories:
+  - development
+tags:
+  - development
+  - node.js
+---
+
+## 🤖 Build your own  Messenger-Bot
 
 Messenger bots uses a web server to process messages it receives or to figure out what messages to send. You also need to have the bot be authenticated to speak with the web server and the bot approved by Facebook to speak with the public.
 
