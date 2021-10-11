@@ -102,7 +102,7 @@ analytics:
 # Site Author
 author:
   name             : "Erik Weisser"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "https://avatars.githubusercontent.com/u/35608570"
   bio              : 'i am just a very creative software developer... there is certainly not a month that goes by that i don´t have a new "cool project idea". I especially like the topics microservice architectures, ci/cd and automation. and i live by the motto: better to release quickly than to be stuck in the conceptual phase.'
   location         : "Bavaria @Germany"
   email            :
