@@ -515,8 +515,8 @@ body {
   border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
-    float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
+    margin: auto;
   }
 
   @include breakpoint($x-large) {
