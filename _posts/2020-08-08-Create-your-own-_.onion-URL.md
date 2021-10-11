@@ -1,7 +1,12 @@
 ﻿---
-layout: post
-title:  "Create a custom *.onion URL with Shallot"
+title: "Post: Chat"
+categories:
+  - Post Formats
+tags:
+  - chat
+  - Post Formats
 ---
+
 
 # Create a custom *.onion URL with Shallot
 
