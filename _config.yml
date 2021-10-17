@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : "I do not need to remember what I have documented" # site tagline that appears below site title in masthead
 name                     : "DEV Blog"
 description              : "A few notes from the daily life of a developer... Maybe the topics are interesting and helpful for you, if not then it's just another page in this world wide web."
-url                      : "https://weisser.dev" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://blog.weisser.dev" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : #"https://blog.weisser.dev" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
