@@ -18,8 +18,8 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "DEV Blog"
 title_separator          : "-"
-subtitle                 : "I do not need to remember what I have documented" # site tagline that appears below site title in masthead
-name                     : "DEV Blog"
+subtitle                 : "I don't need to remember what I've documented." # site tagline that appears below site title in masthead
+name                     : "weisser.dev - Blog"
 description              : "A few notes from the daily life of a developer... Maybe the topics are interesting and helpful for you, if not then it's just another page in this world wide web."
 url                      : "https://blog.weisser.dev" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : #"https://blog.weisser.dev" # the subpath of your site, e.g. "/blog"
