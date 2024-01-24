@@ -103,19 +103,19 @@ analytics:
 author:
   name             : "Erik Weisser"
   avatar           : "https://avatars.githubusercontent.com/u/35608570"
-  bio              : 'i am just a very creative software developer... there is certainly not a month that goes by that i don´t have a new "cool project idea". I especially like the topics microservice architectures, ci/cd and automation. and i live by the motto: better to release quickly than to be stuck in the conceptual phase.'
-  location         : "small village in bavaria"
-  email            :
+  bio              : 'I am just a creative software developer... There`s certainly not a month that goes by without me having a new “cool project idea.” I especially like the topics of microservice architectures, CI/CD, and automation. Most of my project ideas can be found on GitHub. And I live by the motto: “Better to release quickly than to be stuck in the conceptual phase.”'
+  location         : "Lautertal near Coburg"
+  email            : "erik@weisser.dev"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
-    - label: "onepagefactory.de"
+    - label: "weisser.dev"
       icon: "fas fa-fw fa-link"
-      url: "https://onepagefactory.de"
-    - label: "xing"
-      icon: "fab fa-fw fa-xing-square"
-      url: "https://www.xing.com/profile/Erik_Weisser/cv"
+      url: "https://weisser.dev"
+    - label: "linkedin"
+      icon: "fab fa-fw fa-linkedin-square"
+      url: "https://www.linkedin.com/in/erik-weisser/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
