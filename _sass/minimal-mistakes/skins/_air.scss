@@ -5,11 +5,11 @@
 /* Colors */
 $background-color: #eeeeee !default;
 $text-color: #222831 !default;
-$muted-text-color: #393e46 !default;
+$muted-text-color: #444 !default;
 $primary-color: #0d6efd !default;
-$border-color: mix(#fff, #393e46, 75%) !default;
-$footer-background-color: $primary-color !default;
-$link-color: #393e46 !default;
+$border-color: mix(#fff, #444, 75%) !default;
+$footer-background-color: #000 !default;
+$link-color: #444 !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
