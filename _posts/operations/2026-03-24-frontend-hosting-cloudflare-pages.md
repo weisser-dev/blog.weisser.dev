@@ -59,10 +59,6 @@ The thing I like most about this setup is how little there is to think about onc
 
 The only thing Strato does in this setup is hold the domain registration. If you're registering a new domain, you could also register it directly in Cloudflare and skip the nameserver step entirely — but for domains you already have elsewhere, the nameserver delegation works just as well.
 
-## Built with OpenCode
-
-This post — and the project it documents — was built with [OpenCode](https://opencode.ai), an open-source AI coding agent running in the terminal. OpenCode was used throughout the workshop project for CSS and styling work, structuring and scaffolding the project, and reviewing slide content for accuracy and consistency. Writing a post about a hosting setup and having the underlying project itself be a product of AI-assisted development felt like a fitting way to close the loop.
-
 ## Reference
 
 - [dilatchi/cloudflare-static-site-demo](https://github.com/dilatchi/cloudflare-static-site-demo) — a clean tutorial repo that walks through the same steps with screenshots
