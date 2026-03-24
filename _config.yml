@@ -1,0 +1,42 @@
+title: "weisser.dev"
+subtitle: "I don't need to remember what I've documented."
+description: "Developer blog by Erik Weisser – microservices, cloud, AI, automation and side projects."
+url: "https://blog.weisser.dev"
+baseurl: ""
+author:
+  name: "Erik Weisser"
+  avatar: "https://avatars.githubusercontent.com/u/35608570"
+  bio: "Software developer obsessed with microservices, CI/CD, automation and AI. I build things, break them, document what I learn."
+  location: "Lautertal near Coburg, Germany"
+  email: "erik@weisser.dev"
+  links:
+    website: "https://weisser.dev"
+    linkedin: "https://www.linkedin.com/in/erik-weisser/"
+    github: "https://github.com/weisser-dev"
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+encoding: "utf-8"
+
+defaults:
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

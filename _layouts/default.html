@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="{{ site.author.name }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+
+  <!-- Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/feed.xml' | prepend: site.url }}">
+
+  <!-- Theme init (no flash) -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}?v=20260323">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="{{ '/' | prepend: site.baseurl }}" class="nav__brand">{{ site.title }}</a>
+      <ul class="nav__links">
+        <li><a href="{{ '/blog/' | prepend: site.baseurl }}">Blog</a></li>
+        <li><a href="{{ site.author.links.github }}" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="{{ site.author.links.website }}" target="_blank" rel="noopener">weisser.dev</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__text">&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</span>
+      <ul class="footer__links">
+        <li><a href="{{ site.author.links.github }}" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="{{ site.author.links.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="{{ '/feed.xml' | prepend: site.baseurl }}">RSS</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    var btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+</body>
+</html>
