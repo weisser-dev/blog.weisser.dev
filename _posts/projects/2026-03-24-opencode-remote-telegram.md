@@ -43,7 +43,7 @@ The bot spawns `opencode serve` in your project directory when you start a codin
 ## Install
 
 ```bash
-npm install -g opencode-remote-telegram
+npm install -g @weisser-dev/opencode-remote-telegram
 ```
 
 ## Setup
