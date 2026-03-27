@@ -33,6 +33,8 @@ DNS propagation takes a few minutes to a few hours. Once it's done, Cloudflare c
 
 ## Step 2: Create a Cloudflare Pages project
 
+**Heads up:** If you navigate to **Workers & Pages** in the Cloudflare dashboard and click **Create**, you'll land on the Workers tab by default. Don't start creating a Worker — look for the small link that says something like **"Looking for Pages? Create a Pages project here"** (or similar wording, Cloudflare changes this occasionally). Click that to get to the actual Pages setup. This trips up almost everyone the first time.
+
 Go to [pages.cloudflare.com](https://pages.cloudflare.com) → **Create a project** → **Connect to Git** → authorize Cloudflare to access your GitHub account → select the repository.
 
 Configure the build settings:
@@ -58,6 +60,15 @@ That's it. The next `git push` to `main` will automatically trigger a new build 
 The thing I like most about this setup is how little there is to think about once it's running. Cloudflare handles SSL renewal, CDN caching, DDoS protection, and deployment all in one place. The free tier is genuinely generous for personal projects and small tools — unlimited bandwidth, 500 builds per month, custom domains included.
 
 The only thing Strato does in this setup is hold the domain registration. If you're registering a new domain, you could also register it directly in Cloudflare and skip the nameserver step entirely — but for domains you already have elsewhere, the nameserver delegation works just as well.
+
+## Why Cloudflare Pages over GitHub Pages
+
+Both are free for static sites, but Cloudflare Pages has two advantages that matter in practice:
+
+- **Private repos work for free.** GitHub Pages requires a public repository on the free plan — if you want to deploy from a private repo, you need GitHub Pro or a GitHub Team/Enterprise plan. Cloudflare Pages deploys from private repos at no cost.
+- **Every commit gets its own preview URL.** Each push — not just to `main`, but to any branch or pull request — gets a unique `<commit-hash>.pages.dev` URL. This makes it trivial to review changes, share previews with others, or roll back to any previous deployment.
+
+For public open-source sites where the source doesn't need to be private, GitHub Pages works fine. For everything else — side projects, client work, internal tools — Cloudflare Pages is the better choice.
 
 ## Reference
 
