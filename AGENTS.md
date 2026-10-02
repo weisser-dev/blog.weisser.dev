@@ -46,6 +46,17 @@ The damage from a leaked bot token or API key can range from unauthorized API us
 
 ---
 
+## Every post in English AND German
+
+New posts are always published in both languages (decided 2026-10-02):
+
+- Two files in the same category folder: `YYYY-MM-DD-<slug>.md` (English, `lang: en`) and `YYYY-MM-DD-<slug>-de.md` (German, `lang: de`, add the tag `deutsch`).
+- Same date, categories and tags otherwise; the German version is a full translation, not a summary.
+- Link both versions to each other in the first line of the body: `*[Deutsche Version](/blog/YYYY/MM/DD/<slug>-de/)*` and `*[English version](/blog/YYYY/MM/DD/<slug>/)*` (permalink scheme: `/blog/:year/:month/:day/:title/`).
+- Existing older posts stay English-only unless explicitly translated.
+
+---
+
 ## Before writing any content
 
 1. If you are quoting terminal output, env variables, or config files — **scrub all values** before writing
