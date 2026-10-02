@@ -2,6 +2,7 @@
 title: "Ein KI-Agent betreibt mein Homelab – und warum das nichts Besonderes ist"
 date: 2026-10-02
 lang: de
+ref: guardrails-for-ops-agents
 categories:
   - operations
   - ai
@@ -14,8 +15,6 @@ tags:
   - deutsch
 read_time: true
 ---
-
-*[English version](/blog/2026/10/02/guardrails-for-ops-agents/)*
 
 Mein Homelab hat jetzt Agenten. Einer liest Logs und erklärt, was schiefgelaufen ist. Einer läuft alle 15 Minuten, prüft, ob alles gesund ist – und versucht, Probleme zu beheben. Einer schaut sich die Ergebnisse von CVE-Scans an und aktualisiert verwundbare Abhängigkeiten in meinen eigenen Projekten. Alle sind [Claude Code](https://claude.com/claude-code) im Headless-Modus (`claude -p`), gestartet aus meinem selbstgebauten Dashboard.
 

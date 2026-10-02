@@ -1,0 +1,23 @@
+{%- comment -%}
+  Karte eines Beitrags. Input: include.p, include.in (Sprachen, in denen die Karte sichtbar ist, z.B. "en de").
+{%- endcomment -%}
+{%- assign p = include.p -%}
+<a href="{{ p.url | prepend: site.baseurl }}"
+   class="post-card"
+   lang="{{ p.lang }}"
+   hreflang="{{ p.lang }}"
+   data-own="{{ p.lang }}"
+   data-in="{{ include.in }}"
+   data-categories="{{ p.categories | join: ' ' }}"
+   data-year="{{ p.date | date: '%Y' }}">
+  <time class="post-card__date" datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: "%d.%m.%Y" }}</time>
+  {%- if p.lang == "de" %}<span class="lang-note" data-for="en">{{ site.data.i18n.en.only_in_de }}</span>{% else %}<span class="lang-note" data-for="de">{{ site.data.i18n.de.only_in_en }}</span>{% endif %}
+  <h3 class="post-card__title">{{ p.title }}</h3>
+  {% if p.excerpt %}<p class="post-card__excerpt">{{ p.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
+  {% if p.repo %}<p class="post-card__repo">{{ p.repo | remove: "https://github.com/" }}</p>{% endif %}
+  {% if p.tags %}
+  <div class="tags">
+    {% for tag in p.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+  </div>
+  {% endif %}
+</a>

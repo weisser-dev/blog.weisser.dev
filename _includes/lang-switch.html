@@ -1,0 +1,21 @@
+{%- comment -%}
+  Sprachumschalter EN | DE. Ohne include.p: globaler Umschalter (Listenseiten, setzt nur die Praeferenz).
+  Mit include.p (Beitrag): springt zur Uebersetzung; fehlt sie, ist die Sprache deaktiviert.
+{%- endcomment -%}
+{%- assign ui_lang = page.lang | default: 'en' -%}
+{%- if include.p -%}{%- include post-meta.html p=include.p -%}{%- endif -%}
+<div class="lang-switch {{ include.class }}" role="group" aria-label="{{ site.data.i18n[ui_lang].language }}">
+  {%- assign switch_langs = "en,de" | split: "," -%}
+  {%- for l in switch_langs -%}
+    {%- if include.p -%}
+      {%- if l == "en" -%}{%- assign target = pm_en_url -%}{%- else -%}{%- assign target = pm_de_url -%}{%- endif -%}
+      {%- if target != "" -%}
+  <a class="lang-switch__btn" href="{{ target | prepend: site.baseurl }}" hreflang="{{ l }}" lang="{{ l }}" data-setlang="{{ l }}">{{ l | upcase }}</a>
+      {%- else -%}
+  <span class="lang-switch__btn is-disabled" lang="{{ l }}" aria-disabled="true" title="{{ site.data.i18n[ui_lang].lang_unavailable }}">{{ l | upcase }}</span>
+      {%- endif -%}
+    {%- else -%}
+  <a class="lang-switch__btn" href="?lang={{ l }}" hreflang="{{ l }}" lang="{{ l }}" data-setlang="{{ l }}">{{ l | upcase }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

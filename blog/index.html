@@ -9,9 +9,9 @@ permalink: /blog/
   <aside class="blog-sidebar">
 
     <div class="sidebar-block">
-      <h3 class="sidebar-title">Categories</h3>
+      <h3 class="sidebar-title">{% include t.html k="categories" %}</h3>
       <ul class="sidebar-list" id="category-list">
-        <li><button class="sidebar-btn active" data-filter="category" data-value="all">All <span class="sidebar-count" id="count-all"></span></button></li>
+        <li><button class="sidebar-btn active" data-filter="category" data-value="all">{% include t.html k="all" %} <span class="sidebar-count" id="count-all"></span></button></li>
         {% assign all_categories = site.posts | map: "categories" | join: "," | split: "," | uniq | sort %}
         {% for cat in all_categories %}
           {% unless cat == "" %}
@@ -22,7 +22,7 @@ permalink: /blog/
     </div>
 
     <div class="sidebar-block">
-      <h3 class="sidebar-title">Year</h3>
+      <h3 class="sidebar-title">{% include t.html k="year" %}</h3>
       <ul class="sidebar-list" id="year-list">
         {% assign all_years = "" | split: "" %}
         {% for post in site.posts %}
@@ -48,25 +48,14 @@ permalink: /blog/
     </div>
 
     <div id="post-list">
-      {% for post in site.posts %}
-      <a href="{{ post.url | prepend: site.baseurl }}"
-         class="post-card"
-         data-categories="{{ post.categories | join: ' ' }}"
-         data-year="{{ post.date | date: '%Y' }}">
-        <time class="post-card__date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d.%m.%Y" }}</time>
-        <h3 class="post-card__title">{{ post.title }}</h3>
-        {% if post.excerpt %}<p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
-        {% if post.repo %}<p class="post-card__repo">{{ post.repo | remove: "https://github.com/" }}</p>{% endif %}
-        {% if post.tags %}
-        <div class="tags">
-          {% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-        </div>
-        {% endif %}
-      </a>
-      {% endfor %}
+      {%- for post in site.posts -%}
+        {%- include post-meta.html p=post -%}
+        {%- if pm_alt -%}{%- assign in_langs = post.lang -%}{%- else -%}{%- assign in_langs = "en de" -%}{%- endif -%}
+        {% include post-card.html p=post in=in_langs %}
+      {%- endfor -%}
     </div>
 
-    <p class="blog-empty" id="no-results" style="display:none">No posts found.</p>
+    <p class="blog-empty" id="no-results" style="display:none">{% include t.html k="no_posts" %}</p>
   </main>
 
 </div>
@@ -197,47 +186,50 @@ permalink: /blog/
 
 <script>
 (function() {
+  var I18N = {{ site.data.i18n | jsonify }};
   var posts = Array.from(document.querySelectorAll('#post-list .post-card'));
   var activeCategory = 'all';
   var activeYear = 'all';
 
-  // Count per category
-  var catCounts = {};
-  posts.forEach(function(p) {
-    var cats = p.dataset.categories.trim().split(/\s+/).filter(Boolean);
-    cats.forEach(function(c) {
-      catCounts[c] = (catCounts[c] || 0) + 1;
-    });
-  });
+  function lang() { return document.documentElement.getAttribute('data-lang') || 'en'; }
+  // Ein Beitrag zaehlt nur in den Sprachen, in denen er sichtbar ist (data-in) -> keine Dopplung.
+  function inLang(p) { return (' ' + p.dataset.in + ' ').indexOf(' ' + lang() + ' ') !== -1; }
+  function cats(p) { return p.dataset.categories.trim().split(/\s+/).filter(Boolean); }
 
-  // Fill counts
-  document.getElementById('count-all').textContent = posts.length;
-  Object.keys(catCounts).forEach(function(c) {
-    var el = document.getElementById('count-cat-' + c.replace(/[^a-z0-9]/gi, '-').toLowerCase());
-    if (el) el.textContent = catCounts[c];
-  });
+  function updateCounts() {
+    var counts = {}, total = 0;
+    posts.forEach(function(p) {
+      if (!inLang(p)) return;
+      total++;
+      cats(p).forEach(function(c) { counts[c] = (counts[c] || 0) + 1; });
+    });
+    document.getElementById('count-all').textContent = total;
+    document.querySelectorAll('[id^="count-cat-"]').forEach(function(el) { el.textContent = '0'; });
+    Object.keys(counts).forEach(function(c) {
+      var el = document.getElementById('count-cat-' + c.replace(/[^a-z0-9]/gi, '-').toLowerCase());
+      if (el) el.textContent = counts[c];
+    });
+  }
 
   function applyFilter() {
     var visible = 0;
     posts.forEach(function(p) {
-      var cats = p.dataset.categories.trim().split(/\s+/).filter(Boolean);
-      var year = p.dataset.year;
-      var catMatch = activeCategory === 'all' || cats.indexOf(activeCategory) !== -1;
-      var yearMatch = activeYear === 'all' || year === activeYear;
+      var catMatch = activeCategory === 'all' || cats(p).indexOf(activeCategory) !== -1;
+      var yearMatch = activeYear === 'all' || p.dataset.year === activeYear;
       var show = catMatch && yearMatch;
-      p.style.display = show ? 'block' : 'none';
-      if (show) visible++;
+      p.classList.toggle('is-filtered', !show);
+      if (show && inLang(p)) visible++;
     });
 
-    var countEl = document.getElementById('posts-count');
-    countEl.textContent = visible + (visible === 1 ? ' post' : ' posts');
+    var t = I18N[lang()];
+    document.getElementById('posts-count').textContent = visible + ' ' + (visible === 1 ? t.post_one : t.post_many);
 
     var filterEl = document.getElementById('active-filter');
     var parts = [];
     if (activeCategory !== 'all') parts.push(activeCategory);
     if (activeYear !== 'all') parts.push(activeYear);
     if (parts.length) {
-      filterEl.textContent = parts.join(' · ');
+      filterEl.textContent = parts.join(' \u00b7 ');
       filterEl.classList.add('visible');
     } else {
       filterEl.classList.remove('visible');
@@ -252,7 +244,7 @@ permalink: /blog/
       var value = btn.dataset.value;
       var isActive = btn.classList.contains('active');
 
-      // Year: toggle off if already active (→ back to all)
+      // Year: toggle off if already active (back to all)
       if (filter === 'year') {
         document.querySelectorAll('[data-filter="year"]').forEach(function(b) {
           b.classList.remove('active');
@@ -278,7 +270,10 @@ permalink: /blog/
     });
   });
 
+  window.addEventListener('langchange', function() { updateCounts(); applyFilter(); });
+
   // Init
+  updateCounts();
   applyFilter();
 })();
 </script>

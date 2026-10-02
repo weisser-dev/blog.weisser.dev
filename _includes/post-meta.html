@@ -1,0 +1,15 @@
+{%- comment -%}
+  Uebersetzungsgruppe eines Beitrags. Input: include.p (Post oder page).
+  Setzt: pm_en_url, pm_de_url (leer = nicht vorhanden), pm_alt (true = beide Sprachen vorhanden).
+  Sichtbar in Sprache L (Listen/Feeds): p.lang == L  oder  pm_alt == false.
+{%- endcomment -%}
+{%- assign pm_en_url = "" -%}{%- assign pm_de_url = "" -%}
+{%- if include.p.lang == "de" -%}{%- assign pm_de_url = include.p.url -%}{%- else -%}{%- assign pm_en_url = include.p.url -%}{%- endif -%}
+{%- if include.p.ref -%}
+  {%- for q in site.posts -%}
+    {%- if q.ref == include.p.ref and q.url != include.p.url -%}
+      {%- if q.lang == "de" -%}{%- assign pm_de_url = q.url -%}{%- else -%}{%- assign pm_en_url = q.url -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+{%- if pm_en_url != "" and pm_de_url != "" -%}{%- assign pm_alt = true -%}{%- else -%}{%- assign pm_alt = false -%}{%- endif -%}

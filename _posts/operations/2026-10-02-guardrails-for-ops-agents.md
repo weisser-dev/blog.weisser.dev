@@ -11,10 +11,9 @@ tags:
   - devops
   - security
 lang: en
+ref: guardrails-for-ops-agents
 read_time: true
 ---
-
-*[Deutsche Version](/blog/2026/10/02/guardrails-for-ops-agents-de/)*
 
 My homelab now has agents. One reads logs and explains what went wrong. One runs every 15 minutes and checks whether everything is healthy — and if not, tries to fix it. One looks at CVE scan results and bumps vulnerable dependencies in my own projects. All of them are [Claude Code](https://claude.com/claude-code) running headless (`claude -p`), started from my self-built dashboard.
 

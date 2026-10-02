@@ -22,9 +22,9 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+# Feeds (/feed.xml, /de/feed.xml) and sitemap.xml are own templates (one entry per post and language),
+# so jekyll-feed / jekyll-sitemap are not used.
+plugins: []
 
 encoding: "utf-8"
 
@@ -34,8 +34,10 @@ defaults:
       type: posts
     values:
       layout: post
+      lang: en
 
 exclude:
+  - scripts
   - Gemfile
   - Gemfile.lock
   - node_modules

@@ -46,16 +46,23 @@ The damage from a leaked bot token or API key can range from unauthorized API us
 
 ---
 
-## Every post in English AND German
+## Every post in English AND German (translation groups)
 
-New posts are always published in both languages (decided 2026-10-02):
+New posts are always published in both languages (decided 2026-10-02), as **two files** that form one translation group:
 
-- Two files in the same category folder: `YYYY-MM-DD-<slug>.md` (English, `lang: en`) and `YYYY-MM-DD-<slug>-de.md` (German, `lang: de`, add the tag `deutsch`).
-- Same date, categories and tags otherwise; the German version is a full translation, not a summary.
-- Link both versions to each other in the first line of the body: `*[Deutsche Version](/blog/YYYY/MM/DD/<slug>-de/)*` and `*[English version](/blog/YYYY/MM/DD/<slug>/)*` (permalink scheme: `/blog/:year/:month/:day/:title/`).
-- Existing older posts stay English-only unless explicitly translated.
+- `YYYY-MM-DD-<slug>.md` (English, `lang: en`, `ref: <slug>`) and `YYYY-MM-DD-<slug>-de.md` (German, `lang: de`, `ref: <slug>`, tag `deutsch`) in the same category folder.
+- `ref` = slug of the English file, identical in both files. Same date, same categories; the German version is a full translation, not a summary.
+- **Do not** put "Deutsche Version"/"English version" lines into the body: the layout renders the EN | DE switcher on the post page, the hreflang alternates in `<head>` and the sitemap alternates from `ref`.
+- Posts without translation (all older ones) simply have no `ref`; `lang: en` is the default (`_config.yml` defaults). Only set `ref`/`lang` where a translation exists (a German-only original needs `lang: de` but no `-de` file/ref).
+- Permalink scheme: `/blog/:year/:month/:day/:title/` (the `-de` file ends up at `.../<slug>-de/`; these URLs must stay stable).
 
----
+How lists are de-duplicated (no plugins, only Liquid + a bit of JS):
+
+- `_includes/post-meta.html` finds the translations of a post via `ref`. A post is visible in language L if `post.lang == L` or it has no translation (then it is shown in its original language with a small "English only"/"German only" note).
+- Home, archive (`/blog/`) render **both** languages server-side; each card carries `data-in="en de"`, and CSS hides cards that are not in the active `html[data-lang]`. The active language comes from `?lang=`, localStorage/cookie `lang`, browser language, fallback `en` (inline script in `_layouts/default.html`). Post pages are fixed to `page.lang`; their EN | DE switcher links to the translation.
+- Feeds: `/feed.xml` (en) and `/de/feed.xml` (de) are own templates (`feed.xml`, `de/feed.xml`, `_includes/feed-body.xml`), each post exactly once per feed. `sitemap.xml` is an own template with `xhtml:link` alternates. `jekyll-feed`/`jekyll-sitemap` are therefore not used.
+- UI texts (nav, buttons, hints) live in `_data/i18n.yml` (keys under `en:` and `de:`); use `{% include t.html k="key" %}`.
+- Check before pushing: `scripts/check-translations.sh` (source rules) and, after a build, `scripts/check-translations.sh _site`.
 
 ## Before writing any content
 

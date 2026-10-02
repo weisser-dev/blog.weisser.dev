@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+{%- assign pl = page.lang | default: "en" -%}
+<html lang="{{ pl }}" data-lang="{{ pl }}"{% if page.layout == "post" %} data-fixed="true"{% endif %} data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +14,52 @@
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ page.url | prepend: site.url }}">
 
-  <!-- Feed -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/feed.xml' | prepend: site.url }}">
+  <meta property="og:locale" content="{% if pl == 'de' %}de_DE{% else %}en_US{% endif %}">
+
+  {% if page.layout == "post" %}{% include post-meta.html p=page %}
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+  {% if pm_alt %}<link rel="alternate" hreflang="en" href="{{ pm_en_url | prepend: site.url }}">
+  <link rel="alternate" hreflang="de" href="{{ pm_de_url | prepend: site.url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ pm_en_url | prepend: site.url }}">{% endif %}{% endif %}
+
+  <!-- Feeds (one per language, no duplicates) -->
+  <link rel="alternate" type="application/atom+xml" hreflang="en" title="{{ site.data.i18n.en.feed_title }}" href="{{ '/feed.xml' | prepend: site.url }}">
+  <link rel="alternate" type="application/atom+xml" hreflang="de" title="{{ site.data.i18n.de.feed_title }}" href="{{ '/de/feed.xml' | prepend: site.url }}">
+
+  <!-- Language init (no flash): fixed on posts, otherwise ?lang= > stored choice > browser language > en -->
+  <script>
+    (function() {
+      var d = document.documentElement, L = ['en', 'de'];
+      function store(l) {
+        try { localStorage.setItem('lang', l); } catch (e) {}
+        document.cookie = 'lang=' + l + ';path=/;max-age=31536000;SameSite=Lax';
+      }
+      function stored() {
+        try { var v = localStorage.getItem('lang'); if (v) return v; } catch (e) {}
+        var m = document.cookie.match(/(?:^|; )lang=(en|de)/);
+        return m ? m[1] : null;
+      }
+      function apply(l) {
+        d.setAttribute('data-lang', l);
+        if (!d.hasAttribute('data-fixed')) d.lang = l;
+        window.dispatchEvent(new CustomEvent('langchange', { detail: l }));
+      }
+      var q = (location.search.match(/[?&]lang=(en|de)/) || [])[1];
+      var l = q || stored() || ((navigator.language || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en');
+      if (L.indexOf(l) < 0) l = 'en';
+      if (q) store(q);
+      if (!d.hasAttribute('data-fixed')) d.setAttribute('data-lang', l);
+      window.siteLang = { get: function() { return d.getAttribute('data-lang'); }, set: function(x) { store(x); apply(x); } };
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('[data-setlang]');
+        if (!a) return;
+        var x = a.getAttribute('data-setlang');
+        if (d.hasAttribute('data-fixed')) { store(x); return; } // Beitrag: Link folgt zur Uebersetzung
+        e.preventDefault();
+        window.siteLang.set(x);
+      });
+    })();
+  </script>
 
   <!-- Theme init (no flash) -->
   <script>
@@ -33,10 +78,11 @@
     <div class="nav__inner">
       <a href="{{ '/' | prepend: site.baseurl }}" class="nav__brand">{{ site.title }}</a>
       <ul class="nav__links">
-        <li><a href="{{ '/blog/' | prepend: site.baseurl }}">Blog</a></li>
+        <li><a href="{{ '/blog/' | prepend: site.baseurl }}">{% include t.html k="blog" %}</a></li>
         <li><a href="{{ site.author.links.github }}" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="{{ site.author.links.website }}" target="_blank" rel="noopener">weisser.dev</a></li>
       </ul>
+      {% if page.layout == "post" %}{% include lang-switch.html p=page class="lang-switch--nav" %}{% else %}{% include lang-switch.html class="lang-switch--nav" %}{% endif %}
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
@@ -61,7 +107,7 @@
       <ul class="footer__links">
         <li><a href="{{ site.author.links.github }}" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="{{ site.author.links.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="{{ '/feed.xml' | prepend: site.baseurl }}">RSS</a></li>
+        <li><a class="t t-en" href="/feed.xml" hreflang="en">RSS</a><a class="t t-de" href="/de/feed.xml" hreflang="de">RSS</a></li>
       </ul>
     </div>
   </footer>

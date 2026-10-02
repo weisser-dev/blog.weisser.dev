@@ -5,7 +5,7 @@ layout: default
   <article>
     <a href="{{ '/blog/' | prepend: site.baseurl }}" class="back-link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      All Posts
+      {% include t.html k="all_posts" %}
     </a>
 
     <header class="post-header">
@@ -13,8 +13,9 @@ layout: default
       <div class="post-header__meta">
         <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%d.%m.%Y" }}</time>
         {% if page.categories %}<span class="sep">·</span><span>{{ page.categories | join: ", " }}</span>{% endif %}
-        {% if page.read_time %}<span class="sep">·</span><span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>{% endif %}
+        {% if page.read_time %}<span class="sep">·</span><span>{{ content | number_of_words | divided_by: 200 | plus: 1 }} {% include t.html k="min_read" %}</span>{% endif %}
       </div>
+      {% include lang-switch.html p=page class="lang-switch--post" %}
       {% if page.tags %}
       <div class="tags" style="margin-top: var(--sp-4);">
         {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}

@@ -4,28 +4,20 @@ title: Home
 ---
 <div class="container">
   <section class="hero">
-    <p class="hero__greeting">Hey, I'm Erik</p>
+    <p class="hero__greeting">{% include t.html k="hero_greeting" %}</p>
     <h1 class="hero__title">weisser.dev</h1>
-    <p class="hero__description">
-      Software developer obsessed with microservices, cloud architecture, AI automation and side projects.
-      I build things, document what I learn, and ship fast.
-    </p>
+    <p class="hero__description">{% include t.html k="hero_description" %}</p>
   </section>
 
   <section>
-    <h2 class="section-title">Latest Posts</h2>
-    {% for post in site.posts limit:10 %}
-    <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
-      <time class="post-card__date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d.%m.%Y" }}</time>
-      <h3 class="post-card__title">{{ post.title }}</h3>
-      {% if post.excerpt %}<p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
-      {% if post.repo %}<p class="post-card__repo">{{ post.repo | remove: "https://github.com/" }}</p>{% endif %}
-      {% if post.tags %}
-      <div class="tags">
-        {% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-      </div>
-      {% endif %}
-    </a>
-    {% endfor %}
+    <h2 class="section-title">{% include t.html k="latest_posts" %}</h2>
+    {%- assign n_en = 0 -%}{%- assign n_de = 0 -%}
+    {%- for post in site.posts -%}
+      {%- include post-meta.html p=post -%}
+      {%- assign in_langs = "" -%}
+      {%- if post.lang == "en" or pm_alt == false -%}{%- if n_en < 10 -%}{%- assign in_langs = in_langs | append: " en" -%}{%- assign n_en = n_en | plus: 1 -%}{%- endif -%}{%- endif -%}
+      {%- if post.lang == "de" or pm_alt == false -%}{%- if n_de < 10 -%}{%- assign in_langs = in_langs | append: " de" -%}{%- assign n_de = n_de | plus: 1 -%}{%- endif -%}{%- endif -%}
+      {%- if in_langs != "" -%}{% include post-card.html p=post in=in_langs %}{%- endif -%}
+    {%- endfor -%}
   </section>
 </div>

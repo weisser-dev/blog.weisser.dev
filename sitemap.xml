@@ -1,0 +1,26 @@
+---
+layout: null
+sitemap: false
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for p in site.pages -%}
+  {%- if p.sitemap == false or p.url contains '404' or p.layout == nil -%}{%- continue -%}{%- endif %}
+  <url>
+    <loc>{{ p.url | replace: 'index.html', '' | prepend: site.url }}</loc>
+  </url>
+{%- endfor -%}
+{%- for post in site.posts -%}
+  {%- include post-meta.html p=post %}
+  <url>
+    <loc>{{ post.url | prepend: site.url }}</loc>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+    {%- if pm_alt %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ pm_en_url | prepend: site.url }}" />
+    <xhtml:link rel="alternate" hreflang="de" href="{{ pm_de_url | prepend: site.url }}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ pm_en_url | prepend: site.url }}" />
+    {%- endif %}
+  </url>
+{%- endfor %}
+</urlset>
