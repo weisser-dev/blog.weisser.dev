@@ -2,6 +2,10 @@
 
 Personal developer blog covering projects, AI tooling, infrastructure, and engineering notes.
 
+**Live:** [blog.weisser.dev](https://blog.weisser.dev)
+
+![Screenshot of blog.weisser.dev](docs/screenshot.jpg)
+
 Built with Jekyll and hosted on GitHub Pages.
 
 ## Structure
