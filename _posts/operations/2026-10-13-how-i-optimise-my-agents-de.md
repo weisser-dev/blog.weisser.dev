@@ -21,7 +21,7 @@ Dieser Beitrag ist die Checkliste, nach der ich vorgehe. Damit er konkret bleibt
 
 ## Die acht Gewohnheiten
 
-1. **Ein Run-Log-Format für alle Agenten.** Jeder geplante Lauf hängt eine Zeile in dieselbe Art Datei an. Ohne das ist „Was haben die Agenten letzte Woche getan?" Archäologie.
+1. **Ein Run-Log-Format für alle Agenten.** Jeder geplante Lauf hängt eine Zeile in dieselbe Art Datei an. Ohne das ist „Was haben die Agenten letzte Woche getan?“ Archäologie.
 2. **Ein kurzer Morgenbericht.** Eine Seite, aus den Logs erzeugt, in einer Minute lesbar. Ist er lang, höre ich auf, ihn zu lesen.
 3. **Ein Review-Agent, der alle Logs liest.** Seine einzige Aufgabe: mir sagen, was *still und leise aufgehört hat*: Agenten, die nicht liefen, Läufe, die immer gleich enden, Ergebnisse, die sich nicht mehr ändern.
 4. **Ein Veto-Fenster vor jeder automatischen Veröffentlichung.** Automatisches Veröffentlichen wartet zum Beispiel 24 Stunden als Entwurf. Ich kann abbrechen; Schweigen heißt: weiter.
@@ -70,21 +70,21 @@ Es kommt nicht auf genau diese Felder an. Wichtig ist, dass **Status, Kosten, Da
 
 ### 2. Der Morgenbericht
 
-Ein Zusammenfassungs-Job (kleines Modell, nur lesend) macht aus den Logs der letzten 24 Stunden einen Bericht. Das ist der ganze Bericht, und er soll so kurz bleiben:
+Ein Zusammenfassungs-Job (kleines Modell, nur lesend) macht aus den Logs der letzten 24 Stunden einen Bericht. Das ist der ganze Bericht, und so kurz soll er bleiben:
 
 ```text
 Pantry Notes - Agenten - 2026-10-10
 
 4 von 4 geplanten Agenten gelaufen. Kosten gesamt: 2,10 $ (Limit: 6,00 $).
 
-OK       link-checker      38 tote Links, 5 neu seit Dienstag
-TEILWEISE deps-bumper      2 Updates bereit (PR #212), 1 uebersprungen:
-                           Tests fehlgeschlagen
-ENTWURF  changelog-writer  Release Notes fuer v1.8.0 wartend, Veroeffentlichung
-                           Sa 09:00, falls kein Veto
-OK       reviewer          siehe unten
+OK         link-checker      38 tote Links, 5 neu seit Dienstag
+TEILWEISE  deps-bumper       2 Updates bereit (PR #212), 1 übersprungen:
+                             Tests fehlgeschlagen
+ENTWURF    changelog-writer  Release Notes für v1.8.0 warten, Veröffentlichung
+                             Sa 09:00, falls kein Veto
+OK         reviewer          siehe unten
 
-Heute zu tun: PR #212 ansehen, ueber den v1.8.0-Entwurf entscheiden.
+Heute zu tun: PR #212 ansehen, über den v1.8.0-Entwurf entscheiden.
 ```
 
 Ich lese ihn beim Kaffee. Ist alles OK, dauert es zehn Sekunden.
@@ -95,21 +95,21 @@ Der Morgenbericht beschreibt nur, was *passiert* ist. Was mir Sorgen macht, ist,
 
 ```text
 1. link-checker: seit 11 Tagen keine Fix-PRs, obwohl jeder Lauf tote
-   Links meldet. Die Berichte entstehen, aber niemand handelt danach.
-   Vorschlag: pro Lauf ein PR mit hoechstens 5 Korrekturen.
+   Links meldet. Die Berichte entstehen, aber niemand handelt entsprechend.
+   Vorschlag: pro Lauf ein PR mit höchstens 5 Korrekturen.
 
-2. changelog-writer: die letzten 3 Entwuerfe sind bis auf die
+2. changelog-writer: die letzten 3 Entwürfe sind bis auf die
    Versionsnummer identisch. Entweder ist die Vorlage zu starr oder er
-   liest die gemergten PRs nicht mehr. Artefakte der Laeufe 0928,
-   0930, 1007 pruefen.
+   liest die gemergten PRs nicht mehr. Artefakte der Läufe 0928,
+   0930, 1007 prüfen.
 
-3. deps-bumper: 4 Laeufe in Folge "partial", immer dasselbe
-   uebersprungene Paket. Ein bekannter Fehler wird endlos wiederholt,
+3. deps-bumper: 4 Läufe in Folge „partial“, immer dasselbe
+   übersprungene Paket. Ein bekannter Fehler wird endlos wiederholt,
    etwa 0,30 $ pro Lauf. Vorschlag: als bekanntes Problem in die
-   Anweisungen des Agenten schreiben und explizit ueberspringen.
+   Anweisungen des Agenten schreiben und explizit überspringen.
 ```
 
-Drei Punkte sind Absicht. Eine Liste mit fünfzehn „Beobachtungen" wird ignoriert; drei sortierte werden erledigt. Keiner davon ist ein Absturz. Es sind die stillen Fehler: ein Agent, der weiterläuft und aufhört, eine Rolle zu spielen.
+Drei Punkte sind Absicht. Eine Liste mit fünfzehn „Beobachtungen“ wird ignoriert; drei sortierte werden erledigt. Keiner davon ist ein Absturz. Es sind die stillen Fehler: ein Agent, der weiterläuft und aufhört, eine Rolle zu spielen.
 
 ### 4. Das Veto-Fenster
 
@@ -117,7 +117,7 @@ Der `changelog-writer` veröffentlicht nie direkt. Er schreibt `drafts/release-1
 
 ### 5. Enge Berechtigungen pro Aufgabe
 
-Jeder Agent bekommt eine ausdrückliche Erlaubnisliste genau für seine Aufgabe, nichts wird vererbt. Claude Code unterstützt das über Berechtigungsregeln und -modi ([Dokumentation zu Permissions](https://code.claude.com/docs/en/permissions)). Beim `link-checker` lautet die Liste etwa „Dateien lesen, das Link-Check-Skript ausführen, die Berichtsdatei schreiben", sonst nichts. Braucht ein Agent etwas Neues, füge ich genau das hinzu, bewusst. Der Standard ist *verbieten*.
+Jeder Agent bekommt eine ausdrückliche Erlaubnisliste genau für seine Aufgabe, nichts wird vererbt. Claude Code unterstützt das über Berechtigungsregeln und -modi ([Dokumentation zu Permissions](https://code.claude.com/docs/en/permissions)). Beim `link-checker` lautet die Liste etwa „Dateien lesen, das Link-Check-Skript ausführen, die Berichtsdatei schreiben“, sonst nichts. Braucht ein Agent etwas Neues, füge ich genau das hinzu, bewusst. Der Standard ist *verbieten*.
 
 ### 6. Harte Budgets und Timeouts
 
@@ -135,7 +135,7 @@ Das ist billiger und oft auch besser: Das kleine Modell ist für Routine schnell
 
 ### 8. Kleine Schritte und gelernte Lektionen
 
-Jeder Lauf macht eine kleine Sache und prüft sie, zum Beispiel „ein Paket anheben, Tests laufen lassen, Ergebnis festhalten" statt „alles aktualisieren". Das Feld `verified` im Log sagt, ob der Agent die Prüfung wirklich ausgeführt hat und nicht nur Erfolg behauptet. Eine Behauptung ohne Prüfung gilt im Bericht als `unverified`.
+Jeder Lauf macht eine kleine Sache und prüft sie, zum Beispiel „ein Paket anheben, Tests laufen lassen, Ergebnis festhalten“ statt „alles aktualisieren“. Das Feld `verified` im Log sagt, ob der Agent die Prüfung wirklich ausgeführt hat und nicht nur Erfolg behauptet. Eine Behauptung ohne Prüfung gilt im Bericht als `unverified`.
 
 Und wenn etwas schiefgeht, kommt die Lehre in die eigenen Anweisungen des Agenten. Nachdem der `deps-bumper` immer wieder dasselbe kaputte Update versucht hatte, bekam seine Anweisungsdatei zwei neue Zeilen:
 
@@ -144,15 +144,15 @@ Known issue: package "image-resizer" 4.x breaks the upload tests.
 Do not bump it. Note it in the log as "skipped: known issue" and move on.
 ```
 
-Der Fehler passiert einmal, die Anweisungsdatei merkt ihn sich, und der nächste Bericht des Review-Agenten wird kürzer. Die Anweisungen sind ein lebendes Runbook, das wie Code geprüft wird.
+Der Fehler passiert einmal, die Anweisungsdatei merkt ihn sich, und der nächste Bericht des Review-Agenten wird kürzer. Ich behandle die Anweisungen wie ein lebendes Runbook, das wie Code geprüft wird.
 
 ## Offene Standards für Agenten-Workflows
 
-Sobald mehrere Agenten laufen, beschreibt man jedes Mal dieselben Dinge: wem ein Workflow gehört, welcher Agent welchen Schritt macht, was er nutzen darf, welches Budget er hat, was protokolliert wird. Inzwischen gibt es offene Standards, um Agenten-Workflows zu beschreiben, zum Beispiel das [Agentic Workflow Protocol (AWP)](https://agenticworkflowprotocol.org). Laut seiner Website ist es eine offene Spezifikation für portable, nachvollziehbare und richtliniengesteuerte Agenten-Workflows, definiert in deklarativen YAML-Manifesten, die Agenten, Werkzeuge, Ablaufreihenfolge, Budgets, Berechtigungen und Audit-Ereignisse abdecken. Es ist als Entwurf (`v1alpha1`) gekennzeichnet, Felder können sich also ändern. Ich nenne es als Beispiel für die Richtung, nicht als Voraussetzung dieses Beitrags; die Gewohnheiten oben funktionieren mit einfachen Dateien und einem Scheduler.
+Sobald mehrere Agenten laufen, beschreibt man jedes Mal dieselben Dinge: wem ein Workflow gehört, welcher Agent welchen Schritt macht, was er nutzen darf, welches Budget er hat, was protokolliert wird. Inzwischen gibt es offene Standards, um Agenten-Workflows zu beschreiben, zum Beispiel das [Agentic Workflow Protocol (AWP)](https://agenticworkflowprotocol.org). Laut seiner Website ist es eine offene Spezifikation für portable, nachvollziehbare und richtliniengesteuerte Agenten-Workflows, definiert in deklarativen YAML-Manifesten, die Agenten, Tools, Ausführungsreihenfolge, Budgets, Berechtigungen und Audit-Ereignisse abdecken. Es ist als Entwurf (`v1alpha1`) gekennzeichnet, Felder können sich also ändern. Ich nenne es als Beispiel für die Richtung, nicht als Voraussetzung dieses Beitrags; die Gewohnheiten oben funktionieren mit einfachen Dateien und einem Scheduler.
 
 ## Womit ich anfangen würde
 
-Wer schon Agenten laufen hat und nichts davon, beginnt mit den zwei billigsten Dingen: **ein Log-Format** und **harte Limits**. Alles andere (Bericht, Review-Agent, Vetos) baut auf verlässlichen Logs auf. Danach kommt der Review-Agent, denn stille Fehler sind die, die am meisten kosten.
+Wer schon Agenten laufen hat und nichts davon, beginnt mit den zwei günstigsten Dingen: **ein Log-Format** und **harte Limits**. Alles andere (Bericht, Review-Agent, Vetos) baut auf verlässlichen Logs auf. Danach kommt der Review-Agent, denn stille Fehler sind die, die am meisten kosten.
 
 ## Quellen
 
