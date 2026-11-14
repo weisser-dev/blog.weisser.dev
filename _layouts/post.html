@@ -33,6 +33,19 @@ layout: default
       {{ content }}
     </div>
 
+    {% assign article_lang = page.lang | default: 'en' %}
+    {% assign same_language_posts = site.posts | where: 'lang', article_lang %}
+    {% for article in same_language_posts %}
+      {% if article.url == page.url %}
+        {% assign newer_index = forloop.index0 | minus: 1 %}
+        {% assign older_index = forloop.index0 | plus: 1 %}
+        <nav class="post-neighbors" aria-label="{{ site.data.i18n[article_lang].article_navigation }}">
+          {% if newer_index >= 0 %}{% assign newer = same_language_posts[newer_index] %}<a href="{{ newer.url | prepend: site.baseurl }}"><small>{% include t.html k="newer_article" %}</small><strong>{{ newer.title }} →</strong></a>{% endif %}
+          {% if older_index < same_language_posts.size %}{% assign older = same_language_posts[older_index] %}<a href="{{ older.url | prepend: site.baseurl }}"><small>{% include t.html k="older_article" %}</small><strong>← {{ older.title }}</strong></a>{% endif %}
+        </nav>
+      {% endif %}
+    {% endfor %}
+
     <div class="author-bio">
       <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="author-bio__avatar">
       <div>

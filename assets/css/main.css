@@ -609,3 +609,6 @@ html[data-lang="de"] .lang-switch__btn.is-disabled[lang="de"] { opacity: 1; back
 .lang-switch--nav { margin-left: var(--sp-3); }
 .lang-switch--post { margin-top: var(--sp-4); font-size: var(--text-sm); }
 @media (max-width: 700px) { .nav .lang-switch { order: 2; margin-left: auto; } .nav .lang-switch + .theme-toggle { margin-left: var(--sp-2); } }
+
+/* Article navigation and long content remain usable on small screens. */
+.prose a{overflow-wrap:anywhere}.prose table{display:block;max-width:100%;overflow-x:auto}.prose img{height:auto}.post-neighbors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3);margin:var(--sp-7) 0}.post-neighbors a{display:grid;gap:var(--sp-2);padding:var(--sp-4);border:1px solid var(--border);border-radius:var(--radius-md);color:var(--text);text-decoration:none;overflow-wrap:anywhere}.post-neighbors a:hover{border-color:var(--accent)}.post-neighbors small{color:var(--text-muted)}.post-neighbors a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:700px){.post-neighbors{grid-template-columns:1fr}}
