@@ -2,6 +2,12 @@
 # Verwendung im Template: {% include t.html k="blog" %}  (rendert beide Sprachen, CSS blendet eine aus)
 en:
   blog: "Blog"
+  projects: "Projects"
+  projects_intro: "A selection of the public projects, tools and experiments I build and share."
+  project_website: "Visit website"
+  project_source: "Source code"
+  project_archived: "Archived"
+  projects_more: "More projects on GitHub"
   all_posts: "All Posts"
   all: "All"
   categories: "Categories"
@@ -25,6 +31,12 @@ en:
   feed_title: "weisser.dev (English)"
 de:
   blog: "Blog"
+  projects: "Projekte"
+  projects_intro: "Eine Auswahl der öffentlichen Projekte, Werkzeuge und Experimente, die ich entwickle und teile."
+  project_website: "Website ansehen"
+  project_source: "Quellcode"
+  project_archived: "Archiviert"
+  projects_more: "Weitere Projekte auf GitHub"
   all_posts: "Alle Beiträge"
   all: "Alle"
   categories: "Kategorien"

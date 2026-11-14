@@ -1,0 +1,26 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<div class="container container--wide projects">
+  <header class="projects__header">
+    <p class="projects__eyebrow">weisser.dev / open source</p>
+    <h1>{% include t.html k="projects" %}</h1>
+    <p>{% include t.html k="projects_intro" %}</p>
+  </header>
+  <div class="projects__grid">
+    {% for project in site.data.projects %}
+    <article class="project-card">
+      <div class="project-card__top"><span class="project-card__category"><span class="t t-en" lang="en">{{ project.category_en | escape }}</span><span class="t t-de" lang="de">{{ project.category_de | escape }}</span></span>{% if project.archived %}<span class="project-card__status">{% include t.html k="project_archived" %}</span>{% endif %}</div>
+      <h2>{{ project.name | escape }}</h2>
+      <p><span class="t t-en" lang="en">{{ project.en | escape }}</span><span class="t t-de" lang="de">{{ project.de | escape }}</span></p>
+      <div class="project-card__links">
+        {% if project.website %}<a href="{{ project.website | escape }}" target="_blank" rel="noopener noreferrer">{% include t.html k="project_website" %} ↗</a>{% endif %}
+        <a href="{{ project.source | escape }}" target="_blank" rel="noopener noreferrer">{% include t.html k="project_source" %} ↗</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="projects__more"><a href="{{ site.author.links.github }}" target="_blank" rel="noopener noreferrer">{% include t.html k="projects_more" %} →</a></p>
+</div>

@@ -1,0 +1,63 @@
+- name: OpenGlassUI
+  category_en: Wearables · AI
+  category_de: Wearables · KI
+  en: An experimental interface for following and interacting with coding agents on smart glasses.
+  de: Eine experimentelle Oberfläche, um Coding-Agenten auf einer smarten Brille zu begleiten und mit ihnen zu interagieren.
+  website: https://weisser-dev.github.io/openglassui/
+  source: https://github.com/weisser-dev/openglassui
+- name: OpenAgentix
+  category_en: AI · Open source
+  category_de: KI · Open Source
+  en: My independent collection of open-source AI projects and experiments.
+  de: Meine unabhängige Sammlung von Open-Source-Projekten und Experimenten rund um KI.
+  website: https://openagentix.si/
+  source: https://github.com/open-agentix/openagentix.si
+- name: Awesome OpenCode
+  category_en: AI · Developer tools
+  category_de: KI · Entwicklerwerkzeuge
+  en: Agents, skills and configurations for OpenCode, with an interactive command-line setup.
+  de: Agenten, Skills und Konfigurationen für OpenCode mit interaktiver Einrichtung über die Kommandozeile.
+  website: https://www.npmjs.com/package/@weisser-dev/awesome-opencode
+  source: https://github.com/weisser-dev/awesome-opencode
+- name: OpenCode Remote Telegram
+  category_en: AI · Messaging
+  category_de: KI · Messaging
+  en: A Telegram interface for interacting with OpenCode remotely.
+  de: Eine Telegram-Oberfläche, um aus der Ferne mit OpenCode zu interagieren.
+  source: https://github.com/weisser-dev/opencode-remote-telegram
+- name: Agentic AI Workshop
+  category_en: AI · Learning
+  category_de: KI · Lernen
+  en: An interactive, self-guided workshop on AI agents, language models and AI-assisted coding.
+  de: Ein interaktiver Workshop zum selbstständigen Lernen über KI-Agenten, Sprachmodelle und KI-gestützte Entwicklung.
+  website: https://agentic-ai.weisser.dev/
+  source: https://github.com/weisser-dev/agentic-ai-workshop
+- name: OpenPastebin
+  category_en: Tools · Sharing
+  category_de: Werkzeuge · Teilen
+  en: A self-hosted pastebin for sharing text, code and files with automatic expiration.
+  de: Ein selbst gehostetes Pastebin zum Teilen von Text, Code und Dateien mit automatischem Ablauf.
+  website: https://paste.weisser.dev/
+  source: https://github.com/weisser-dev/openpastebin
+- name: My Digital Card
+  category_en: Web · React
+  category_de: Web · React
+  en: A configurable digital business card template with themes and social links.
+  de: Eine konfigurierbare Vorlage für digitale Visitenkarten mit Themes und Social-Media-Links.
+  website: https://weisser-dev.github.io/my-digital-card/
+  source: https://github.com/weisser-dev/my-digital-card
+- name: Responsive Resume CV
+  category_en: Web · React
+  category_de: Web · React
+  en: A multilingual, themeable résumé app configured with JSON and supporting PDF export.
+  de: Eine mehrsprachige Lebenslauf-App mit Themes, JSON-Konfiguration und PDF-Export.
+  website: https://weisser-dev.github.io/responsive-resume-cv-react/
+  source: https://github.com/weisser-dev/responsive-resume-cv-react
+- name: Open Model Prism
+  category_en: AI · Gateway
+  category_de: KI · Gateway
+  en: An archived, self-hosted gateway for routing requests to language models. Source available.
+  de: Ein archiviertes, selbst gehostetes Gateway zur Weiterleitung von Anfragen an Sprachmodelle. Der Quellcode ist verfügbar.
+  website: https://weisser-dev.github.io/open-model-prism/
+  source: https://github.com/weisser-dev/open-model-prism
+  archived: true

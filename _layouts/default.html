@@ -70,7 +70,7 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}?v=20260323">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | prepend: site.baseurl }}?v=20261114-projects">
 </head>
 <body>
 
@@ -79,6 +79,7 @@
       <a href="{{ '/' | prepend: site.baseurl }}" class="nav__brand">{{ site.title }}</a>
       <ul class="nav__links">
         <li><a href="{{ '/blog/' | prepend: site.baseurl }}">{% include t.html k="blog" %}</a></li>
+        <li><a href="{{ '/projects/' | prepend: site.baseurl }}"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>{% include t.html k="projects" %}</a></li>
         <li><a href="{{ site.author.links.github }}" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="{{ site.author.links.website }}" target="_blank" rel="noopener">weisser.dev</a></li>
       </ul>
