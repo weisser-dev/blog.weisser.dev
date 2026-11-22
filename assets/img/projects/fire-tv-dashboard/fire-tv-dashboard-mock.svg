@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Stillframe portrait dashboard concept mockup</title>
+  <desc id="desc">An old Fire TV connected to a portrait monitor showing a photo slideshow, clock, weather, calendar, tasks and notes, with a phone connected over local Wi-Fi.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#17263a"/><stop offset="1" stop-color="#090e18"/></linearGradient>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#69b8e8"/><stop offset=".58" stop-color="#d8e5d7"/><stop offset="1" stop-color="#e8c991"/></linearGradient>
+    <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#263c52" stop-opacity=".72"/><stop offset="1" stop-color="#101d2b" stop-opacity=".82"/></linearGradient>
+    <linearGradient id="frame" x2="1" y2="1"><stop stop-color="#f5e8c7"/><stop offset=".5" stop-color="#b99b70"/><stop offset="1" stop-color="#e5d4b1"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="20"/></filter>
+    <clipPath id="screen"><rect x="169" y="157" width="434" height="772" rx="8"/></clipPath>
+  </defs>
+  <rect width="1600" height="1080" rx="42" fill="url(#background)"/>
+  <circle cx="1220" cy="180" r="330" fill="#397bb8" opacity=".10"/>
+  <ellipse cx="392" cy="987" rx="360" ry="42" fill="#000" opacity=".44" filter="url(#shadow)"/>
+
+  <!-- portrait monitor mockup -->
+  <rect x="126" y="110" width="520" height="870" rx="34" fill="#06080b" stroke="url(#frame)" stroke-width="28"/>
+  <rect x="147" y="131" width="478" height="828" rx="17" fill="#070b11" stroke="#332d24" stroke-width="8"/>
+  <g clip-path="url(#screen)">
+    <rect x="169" y="157" width="434" height="772" fill="url(#sky)"/>
+    <circle cx="515" cy="293" r="66" fill="#fff0b7" opacity=".85"/>
+    <path d="M169 465 Q246 360 321 444 T469 414 T603 399 V929 H169Z" fill="#4b786c"/>
+    <path d="M169 540 Q254 458 331 498 T486 464 T603 493 V929 H169Z" fill="#265c56"/>
+    <path d="M169 597 Q259 529 354 579 T497 538 T603 565 V929 H169Z" fill="#17413e"/>
+    <path d="M169 700 Q262 644 352 691 T491 670 T603 690 V929 H169Z" fill="#28635b"/>
+    <path d="M169 778 Q274 727 357 763 T497 746 T603 757 V929 H169Z" fill="#133a38"/>
+    <path d="M205 930 Q291 814 359 850 Q405 873 459 929Z" fill="#8b9d6c" opacity=".78"/>
+    <g fill="#f4e6bd" opacity=".76"><circle cx="226" cy="386" r="3"/><circle cx="266" cy="342" r="2"/><circle cx="453" cy="363" r="3"/><circle cx="564" cy="421" r="2"/><circle cx="384" cy="319" r="2"/></g>
+
+    <text x="193" y="194" fill="#fff5dc" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">STILLFRAME</text>
+    <rect x="190" y="211" width="112" height="61" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".45"/>
+    <text x="211" y="251" fill="#fff" font-family="Arial,sans-serif" font-size="29" font-weight="600">09:41</text>
+    <rect x="361" y="211" width="218" height="61" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".45"/>
+    <text x="382" y="237" fill="#fff" font-family="Arial,sans-serif" font-size="13">Saturday, 21 November</text>
+    <text x="382" y="257" fill="#fff" font-family="Arial,sans-serif" font-size="13">☁  12°  ·  Cloudy</text>
+
+    <rect x="190" y="746" width="386" height="151" rx="22" fill="url(#glass)" stroke="#fff" stroke-opacity=".55"/>
+    <line x1="383" y1="766" x2="383" y2="877" stroke="#fff" stroke-opacity=".30"/>
+    <text x="212" y="777" fill="#f6d987" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1">UP NEXT</text>
+    <text x="212" y="807" fill="#fff" font-family="Arial,sans-serif" font-size="14">11:30  Family lunch</text>
+    <text x="212" y="832" fill="#fff" font-family="Arial,sans-serif" font-size="14">Tomorrow  ·  Birthday</text>
+    <text x="212" y="865" fill="#f6d987" font-family="Arial,sans-serif" font-size="12" font-weight="700">TASKS</text>
+    <rect x="406" y="794" width="15" height="15" rx="3" fill="none" stroke="#f6d987" stroke-width="2"/>
+    <text x="432" y="807" fill="#fff" font-family="Arial,sans-serif" font-size="14">Buy flowers</text>
+    <text x="406" y="841" fill="#f6d987" font-family="Arial,sans-serif" font-size="12" font-weight="700">NOTES</text>
+    <text x="406" y="867" fill="#fff" font-family="Arial,sans-serif" font-size="13">A little reminder</text>
+    <rect x="536" y="855" width="28" height="28" rx="4" fill="#fff"/>
+    <path d="M540 859h7v7h-7zm13 0h7v7h-7zm-13 13h7v7h-7zm11-7h3v3h-3zm5 6h4v4h-4zm-8 3h3v3h-3zm10-13h4v4h-4z" fill="#101820"/>
+  </g>
+  <rect x="169" y="157" width="434" height="772" rx="8" fill="none" stroke="#111820" stroke-width="2"/>
+  <path d="M300 980h172l42 61H258Z" fill="#343d48"/>
+  <path d="M252 1039h266q17 0 17 12t-17 12H252q-17 0-17-12t17-12Z" fill="#424d5b"/>
+
+  <!-- feature callouts -->
+  <text x="730" y="173" fill="#f4d68e" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">CONCEPT MOCKUP</text>
+  <text x="730" y="234" fill="#f6f8fb" font-family="Arial,sans-serif" font-size="43" font-weight="700">A second life</text>
+  <text x="730" y="284" fill="#f6f8fb" font-family="Arial,sans-serif" font-size="43" font-weight="700">for old hardware</text>
+  <text x="730" y="341" fill="#b8c5d4" font-family="Arial,sans-serif" font-size="21">Portrait monitor + Fire TV</text>
+
+  <g font-family="Arial,sans-serif">
+    <circle cx="751" cy="423" r="19" fill="#f4d68e"/><path d="M743 424l7 7 12-15" fill="none" stroke="#142033" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="790" y="430" fill="#f6f8fb" font-size="20" font-weight="700">Photos stay on the TV</text>
+    <text x="790" y="460" fill="#9eacbd" font-size="16">Local folders and albums</text>
+    <circle cx="751" cy="528" r="19" fill="#f4d68e"/><path d="M742 525h18v13h-18z M747 520v8 M755 520v8" fill="none" stroke="#142033" stroke-width="3" stroke-linecap="round"/>
+    <text x="790" y="535" fill="#f6f8fb" font-size="20" font-weight="700">Clock, weather, calendar</text>
+    <text x="790" y="565" fill="#9eacbd" font-size="16">Plus notes and checklists</text>
+    <circle cx="751" cy="633" r="19" fill="#f4d68e"/><path d="M744 626h14v14h-14z M747 629h8v8h-8z" fill="none" stroke="#142033" stroke-width="2.5"/>
+    <text x="790" y="640" fill="#f6f8fb" font-size="20" font-weight="700">Phone control over local Wi-Fi</text>
+    <text x="790" y="670" fill="#9eacbd" font-size="16">Scan a QR code to upload or edit</text>
+  </g>
+
+  <!-- Fire TV box and phone connected over LAN -->
+  <path d="M725 828 C865 746 1010 789 1120 734" fill="none" stroke="#56c9df" stroke-width="3" stroke-dasharray="8 12" opacity=".8"/>
+  <path d="M725 828 C603 776 532 807 510 906" fill="none" stroke="#f4d68e" stroke-width="3" stroke-dasharray="8 12" opacity=".75"/>
+  <rect x="682" y="838" width="214" height="105" rx="24" fill="#080b10" stroke="#667384" stroke-width="3"/>
+  <circle cx="853" cy="891" r="6" fill="#f4d68e"/>
+  <text x="709" y="883" fill="#cbd4df" font-family="Arial,sans-serif" font-size="17" font-weight="700">FIRE TV</text>
+  <text x="709" y="911" fill="#788698" font-family="Arial,sans-serif" font-size="13">existing device</text>
+  <rect x="1102" y="695" width="188" height="310" rx="31" fill="#0a0d13" stroke="#8490a0" stroke-width="5"/>
+  <rect x="1116" y="725" width="160" height="248" rx="17" fill="#1c2938"/>
+  <text x="1130" y="759" fill="#f6f8fb" font-family="Arial,sans-serif" font-size="15" font-weight="700">Stillframe</text>
+  <text x="1130" y="790" fill="#9eacbd" font-family="Arial,sans-serif" font-size="12">Phone dashboard</text>
+  <rect x="1130" y="812" width="132" height="52" rx="10" fill="#f1d28b"/>
+  <text x="1144" y="844" fill="#182234" font-family="Arial,sans-serif" font-size="13" font-weight="700">Add photos</text>
+  <rect x="1130" y="878" width="132" height="72" rx="10" fill="#314459"/>
+  <text x="1143" y="907" fill="#fff" font-family="Arial,sans-serif" font-size="12">Calendar</text>
+  <text x="1143" y="930" fill="#fff" font-family="Arial,sans-serif" font-size="12">Notes · Tasks</text>
+  <text x="1103" y="1041" fill="#9eacbd" font-family="Arial,sans-serif" font-size="14">Same local network</text>
+</svg>
