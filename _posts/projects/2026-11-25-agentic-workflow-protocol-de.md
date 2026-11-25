@@ -14,15 +14,21 @@ Das [Agentic Workflow Protocol (AWP)](https://agenticworkflowprotocol.org/) habe
 
 ## Eine Beschreibung, keine weitere Agentenplattform
 
+![AWP beschreibt Abläufe, Leitplanken und Nachweise; eine Runtime setzt Regeln durch.](/assets/img/awp/1-de.svg)
+
 AWP ist eine offene Spezifikation, keine Runtime und keine gehostete Plattform. Eine Workflow-Beschreibung kann Agenten, Werkzeuge und Schritte ebenso abbilden wie Budgets, Berechtigungen, Umgebungen, Verantwortlichkeiten, Risiken und menschliche Freigaben. Sie beschreibt auch Informationen, die Implementierungen für Audit und Nachvollziehbarkeit aufzeichnen können.
 
 Der Unterschied ist wichtig: **Eine Berechtigung oder ein Budget in einem Dokument wird nicht von selbst durchgesetzt.** Eine Runtime muss die Regeln interpretieren und durchsetzen. Teams müssen weiterhin die Implementierung testen, Zugriffe verwalten und entscheiden, welche Vorgaben gelten. AWP allein macht ein System nicht compliant.
 
 ## Das Verhältnis zu MCP und A2A
 
+![AWP beschreibt Workflows, MCP verbindet Werkzeuge und A2A unterstützt die Kommunikation zwischen Agenten.](/assets/img/awp/2-de.svg)
+
 Für mich ergänzen sich diese Ebenen. MCP bietet eine Möglichkeit, Agenten mit Werkzeugen und Ressourcen zu verbinden; A2A befasst sich mit der Kommunikation zwischen Agenten. AWP konzentriert sich auf die Beschreibung des umgebenden Workflows: Was soll geschehen, unter welchen Grenzen und was soll aufgezeichnet werden? Wie die Integration konkret funktioniert, hängt von der jeweiligen Implementierung ab. Eine automatische Zusammenarbeit beliebiger Komponenten ist damit nicht versprochen.
 
 ## Warum Grenzen ausdrücklich beschreiben?
+
+![Einen Workflow definieren und validieren, bevor eine Runtime die Regeln durchsetzt.](/assets/img/awp/3-de.svg)
 
 Ein Beispiel ist ein Workflow, der ein Repository untersucht und eine Korrektur vorschlägt. Wer die Konfiguration prüft, sollte verfügbare Werkzeuge, Laufzeitgrenzen und Freigaben finden können, ohne sie aus einem langen Prompt rekonstruieren zu müssen. Ein Validator kann prüfen helfen, ob eine Beschreibung dem Schema entspricht; er kann nicht garantieren, dass der Workflow sicher ist oder die Runtime sich korrekt verhält.
 

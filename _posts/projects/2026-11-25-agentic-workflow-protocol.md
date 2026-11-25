@@ -14,15 +14,21 @@ I started the [Agentic Workflow Protocol (AWP)](https://agenticworkflowprotocol.
 
 ## A description, not another agent platform
 
+![AWP describes workflows, guardrails and evidence; a runtime enforces the rules.](/assets/img/awp/1-en.svg)
+
 AWP is an open specification, not a runtime or a hosted platform. A workflow description can express agents, tools and steps alongside aspects such as budgets, permissions, environments, ownership, risk and human approval. It also describes information that implementations can record for audit and reproducibility.
 
 The distinction matters: **writing a permission or a budget into a document does not enforce it**. A runtime must interpret and enforce the rules, and teams still need to test the implementation, manage access and decide which policies apply. AWP does not make a system compliant by itself.
 
 ## How it relates to MCP and A2A
 
+![AWP defines workflows, MCP connects tools and A2A supports agent communication.](/assets/img/awp/2-en.svg)
+
 I see these as complementary layers. MCP provides a way for agents to interact with tools and resources; A2A addresses communication between agents. AWP focuses on describing the workflow around them: what should happen, under which constraints, and what needs to be recorded. The exact integration depends on the implementation rather than a promise that any combination will automatically work together.
 
 ## Why make the boundaries explicit?
+
+![Define and validate a workflow before a runtime enforces its rules.](/assets/img/awp/3-en.svg)
 
 Consider a workflow that examines a repository and proposes a fix. A human reviewing its configuration should be able to find the available tools, execution limits and approval requirements without reconstructing them from a long prompt. A validator can help check whether a description follows the schema; it cannot guarantee that the workflow is safe or that the runtime behaves correctly.
 
